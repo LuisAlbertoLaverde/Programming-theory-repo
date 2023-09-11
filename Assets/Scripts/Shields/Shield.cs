@@ -1,7 +1,8 @@
 using UnityEngine;
-namespace Heroes
+
+namespace Shields
 {
-    public class Hero : MonoBehaviour
+    public class Shield : MonoBehaviour
     {
         [SerializeField] protected string id;
 

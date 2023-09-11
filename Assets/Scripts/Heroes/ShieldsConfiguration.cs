@@ -4,22 +4,22 @@ using UnityEngine;
 namespace Heroes
 {
     [CreateAssetMenu(menuName = "Custom/Heroes configuration")]
-    public class HeroesConfiguration : ScriptableObject
+    public class ShieldsConfiguration : ScriptableObject
     {
         [SerializeField] private Hero[] heroes;
-        private Dictionary<string, Hero> idTohero;
+        private Dictionary<string, Hero> idToHero;
 
         private void Awake()
         {
-            idTohero = new Dictionary<string, Hero>();
+            idToHero = new Dictionary<string, Hero>();
             foreach (var hero in heroes)
             {
-                idTohero.Add(hero.Id, hero);
+                idToHero.Add(hero.Id, hero);
             }
         }
         public Hero GetHeroPrefabById(string id)
         {
-            if (!idTohero.TryGetValue(id, out var hero))
+            if (!idToHero.TryGetValue(id, out var hero))
             {
                 throw new Exception($"Hero with id {id} does not exist");
             }

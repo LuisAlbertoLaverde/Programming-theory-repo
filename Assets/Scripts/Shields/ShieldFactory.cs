@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class ShieldFactory : MonoBehaviour
+namespace Shields
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ShieldFactory
     {
-        
-    }
+        private readonly ShieldsConfiguration shieldsConfiguration;
+        public ShieldFactory(Heroes.ShieldsConfiguration heroesConfiguration)
+        {
+            this.shieldsConfiguration = new Shields.ShieldsConfiguration();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public Shield Create(string id)
+        {
+            var shield = shieldsConfiguration.GetShieldPrefabById(id);
+            return Object.Instantiate(shield);
+        }
+
     }
 }
+
