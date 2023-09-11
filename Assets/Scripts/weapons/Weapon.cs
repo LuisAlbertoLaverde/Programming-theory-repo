@@ -1,11 +1,13 @@
 using UnityEngine;
-namespace Heroes
+
+namespace Weapons
 {
-    public abstract class Hero : MonoBehaviour
+    public abstract class Weapon : MonoBehaviour
     {
         [SerializeField] protected string id;
 
         public string Id => id;
     }
+
 }
 

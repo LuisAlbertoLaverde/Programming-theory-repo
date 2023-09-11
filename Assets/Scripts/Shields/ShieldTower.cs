@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ShieldTower : MonoBehaviour
+namespace Shields
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ShieldTower : Shield
     {
-        
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }
+

@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class WeaponFactory : MonoBehaviour
+namespace Weapons
 {
-    // Start is called before the first frame update
-    void Start()
+    public class WeaponFactory
     {
-        
-    }
+        private readonly WeaponsConfiguration weaponsConfiguration;
+        public WeaponFactory(WeaponsConfiguration weaponsConfiguration)
+        {
+            this.weaponsConfiguration = weaponsConfiguration;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public Weapon Create(string id)
+        {
+            var weapon = weaponsConfiguration.GetWeaponPrefabById(id);
+            return Object.Instantiate(weapon);
+        }
     }
 }
+

@@ -4,9 +4,9 @@ namespace Shields
     public class ShieldFactory
     {
         private readonly ShieldsConfiguration shieldsConfiguration;
-        public ShieldFactory(Heroes.ShieldsConfiguration heroesConfiguration)
+        public ShieldFactory(ShieldsConfiguration shieldsConfiguration)
         {
-            this.shieldsConfiguration = new Shields.ShieldsConfiguration();
+            this.shieldsConfiguration = shieldsConfiguration;
         }
 
         public Shield Create(string id)
@@ -14,7 +14,6 @@ namespace Shields
             var shield = shieldsConfiguration.GetShieldPrefabById(id);
             return Object.Instantiate(shield);
         }
-
     }
 }
 

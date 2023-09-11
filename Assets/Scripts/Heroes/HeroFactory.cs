@@ -3,10 +3,10 @@ namespace Heroes
 {
     public class HeroFactory
     {
-        private readonly ShieldsConfiguration heroesConfiguration;
-        public HeroFactory(ShieldsConfiguration heroesConfiguration)
+        private readonly HeroesConfiguration heroesConfiguration;
+        public HeroFactory(HeroesConfiguration heroesConfiguration)
         {
-            this.heroesConfiguration = new ShieldsConfiguration();
+            this.heroesConfiguration = heroesConfiguration;
         }
 
         public Hero Create(string id)

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Shields
 {
-    public class Shield : MonoBehaviour
+    public abstract class Shield : MonoBehaviour
     {
         [SerializeField] protected string id;
 

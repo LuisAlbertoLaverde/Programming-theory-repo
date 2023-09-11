@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Heroes
 {
     [CreateAssetMenu(menuName = "Custom/Heroes configuration")]
-    public class ShieldsConfiguration : ScriptableObject
+    public class HeroesConfiguration : ScriptableObject
     {
         [SerializeField] private Hero[] heroes;
         private Dictionary<string, Hero> idToHero;
