@@ -1,5 +1,5 @@
 # Programming-theory-repo
-submission 2 for jr programmer pathway
+
 # Abstract Factory Pattern for the Creation of Characters, Weapons and Shields
 
 This project is an implementation of the Abstract Factory pattern, which provides an elegant and efficient way to create families of objects related or dependent on each other. We use the Abstract Factory pattern for the creation of characters, weapons and shields in a video game, giving more code. clean and organized and the flexibility to easily extend it in the future.
