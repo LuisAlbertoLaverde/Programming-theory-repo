@@ -8,6 +8,4 @@ namespace Weapons
 
         public string Id => id;
     }
-
 }
-

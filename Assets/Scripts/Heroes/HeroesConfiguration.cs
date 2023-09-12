@@ -6,20 +6,20 @@ namespace Heroes
     [CreateAssetMenu(menuName = "Custom/Heroes configuration")]
     public class HeroesConfiguration : ScriptableObject
     {
-        [SerializeField] private Hero[] heroes;
-        private Dictionary<string, Hero> idToHero;
+        [SerializeField] private Hero[] _heroes;
+        private Dictionary<string, Hero> _idToHero;
 
         private void Awake()
         {
-            idToHero = new Dictionary<string, Hero>();
-            foreach (var hero in heroes)
+            _idToHero = new Dictionary<string, Hero>();
+            foreach (var hero in _heroes)
             {
-                idToHero.Add(hero.Id, hero);
+                _idToHero.Add(hero.Id, hero);
             }
         }
         public Hero GetHeroPrefabById(string id)
         {
-            if (!idToHero.TryGetValue(id, out var hero))
+            if (!_idToHero.TryGetValue(id, out var hero))
             {
                 throw new Exception($"Hero with id {id} does not exist");
             }

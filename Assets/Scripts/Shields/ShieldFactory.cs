@@ -3,15 +3,15 @@ namespace Shields
 {
     public class ShieldFactory
     {
-        private readonly ShieldsConfiguration shieldsConfiguration;
+        private readonly ShieldsConfiguration _shieldsConfiguration;
         public ShieldFactory(ShieldsConfiguration shieldsConfiguration)
         {
-            this.shieldsConfiguration = shieldsConfiguration;
+            this._shieldsConfiguration = shieldsConfiguration;
         }
 
         public Shield Create(string id)
         {
-            var shield = shieldsConfiguration.GetShieldPrefabById(id);
+            var shield = _shieldsConfiguration.GetShieldPrefabById(id);
             return Object.Instantiate(shield);
         }
     }

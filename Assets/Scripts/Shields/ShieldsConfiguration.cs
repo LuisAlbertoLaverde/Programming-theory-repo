@@ -6,20 +6,20 @@ namespace Shields
     [CreateAssetMenu(menuName = "Custom/Shields configuration")]
     public class ShieldsConfiguration : ScriptableObject
     {
-        [SerializeField] private Shield[] shields;
-        private Dictionary<string, Shield> idToShield;
+        [SerializeField] private Shield[] _shields;
+        private Dictionary<string, Shield> _idToShield;
 
         private void Awake()
         {
-            idToShield = new Dictionary<string, Shield>();
-            foreach (var shield in shields)
+            _idToShield = new Dictionary<string, Shield>();
+            foreach (var shield in _shields)
             {
-                idToShield.Add(shield.Id, shield);
+                _idToShield.Add(shield.Id, shield);
             }
         }
         public Shield GetShieldPrefabById(string id)
         {
-            if (!idToShield.TryGetValue(id, out var shield))
+            if (!_idToShield.TryGetValue(id, out var shield))
             {
                 throw new Exception($"Shield with id {id} does not exist");
             }

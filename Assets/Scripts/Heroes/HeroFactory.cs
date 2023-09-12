@@ -3,15 +3,15 @@ namespace Heroes
 {
     public class HeroFactory
     {
-        private readonly HeroesConfiguration heroesConfiguration;
+        private readonly HeroesConfiguration _heroesConfiguration;
         public HeroFactory(HeroesConfiguration heroesConfiguration)
         {
-            this.heroesConfiguration = heroesConfiguration;
+            this._heroesConfiguration = heroesConfiguration;
         }
 
         public Hero Create(string id)
         {
-            var hero = heroesConfiguration.GetHeroPrefabById(id);
+            var hero = _heroesConfiguration.GetHeroPrefabById(id);
             return Object.Instantiate(hero);
         }
     }

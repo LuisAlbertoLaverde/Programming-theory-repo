@@ -3,15 +3,15 @@ namespace Weapons
 {
     public class WeaponFactory
     {
-        private readonly WeaponsConfiguration weaponsConfiguration;
+        private readonly WeaponsConfiguration _weaponsConfiguration;
         public WeaponFactory(WeaponsConfiguration weaponsConfiguration)
         {
-            this.weaponsConfiguration = weaponsConfiguration;
+            this._weaponsConfiguration = weaponsConfiguration;
         }
 
         public Weapon Create(string id)
         {
-            var weapon = weaponsConfiguration.GetWeaponPrefabById(id);
+            var weapon = _weaponsConfiguration.GetWeaponPrefabById(id);
             return Object.Instantiate(weapon);
         }
     }

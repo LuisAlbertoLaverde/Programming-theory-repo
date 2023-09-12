@@ -3,30 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Weapons
 {
-    [CreateAssetMenu(menuName = "Custom/Shields configuration")]
+    [CreateAssetMenu(menuName = "Custom/Weapons configuration")]
     public class WeaponsConfiguration : ScriptableObject
     {
-        [SerializeField] private Weapon[] weapons;
-        private Dictionary<string, Weapon> idToWeapon;
+        [SerializeField] private Weapon[] _weapons;
+        private Dictionary<string, Weapon> _idToWeapon;
 
         private void Awake()
         {
-            idToWeapon = new Dictionary<string, Weapon>();
-            foreach (var weapon in weapons)
+            _idToWeapon = new Dictionary<string, Weapon>();
+            foreach (var weapon in _weapons)
             {
-                idToWeapon.Add(weapon.Id, weapon);
+                _idToWeapon.Add(weapon.Id, weapon);
             }
         }
         public Weapon GetWeaponPrefabById(string id)
         {
-            if (!idToWeapon.TryGetValue(id, out var weapon))
+            if (!_idToWeapon.TryGetValue(id, out var weapon))
             {
                 throw new Exception($"Weapon with id {id} does not exist");
             }
             return weapon;
         }
     }
-
-
 }
 
